@@ -12,11 +12,6 @@ public class Porto {
     public Porto(String nome, String pais) {
         random = new Random();
         id = random.nextInt(1000);
-        for (int i = 0; i < gerenciadorPortos.portos.size(); i++) {
-            if(gerenciadorPortos.getPortos().getId() == id){
-                id = random.nextInt(1000);
-            }
-        }
         this.nome = nome;
         this.pais = pais;
     }

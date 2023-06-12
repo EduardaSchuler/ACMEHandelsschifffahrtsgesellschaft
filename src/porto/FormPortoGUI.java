@@ -14,6 +14,7 @@ public class FormPortoGUI {
     private GerenciadorPortos gerenciadorPortos;
 
     public FormPortoGUI(Aplicacao aplicacao) {
+        gerenciadorPortos = new GerenciadorPortos();
         this.aplicacao = aplicacao;
         BotaoEnviar.addActionListener(new ActionListener() {
             @Override
