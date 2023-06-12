@@ -6,12 +6,9 @@ public class Porto {
     private int id;
     private String nome;
     private String pais;
-    private Random random;
-    private GerenciadorPortos gerenciadorPortos;
 
-    public Porto(String nome, String pais) {
-        random = new Random();
-        id = random.nextInt(1000);
+    public Porto(int id, String nome, String pais) {
+        this.id = id;
         this.nome = nome;
         this.pais = pais;
     }

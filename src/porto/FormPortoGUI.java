@@ -10,6 +10,7 @@ public class FormPortoGUI {
     private JTextField FieldNome;
     private JTextField FieldPais;
     private JButton BotaoEnviar;
+    private JTextField FieldID;
     private Aplicacao aplicacao;
     private GerenciadorPortos gerenciadorPortos;
 
@@ -20,11 +21,14 @@ public class FormPortoGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+                    int id;
                     String nome, pais;
+                    id = Integer.parseInt(FieldID.getText());
                     nome = FieldNome.getText();
                     pais = FieldPais.getText();
-                    Porto porto = new Porto(nome, pais);
+                    Porto porto = new Porto(id, nome, pais);
                     gerenciadorPortos.addPorto(porto);
+                    System.out.println(gerenciadorPortos.getPortos().getNome());
                 }catch (Exception ex){
                     ex.printStackTrace();
                 }
