@@ -24,13 +24,16 @@ public class FormPortoGUI {
                     int id;
                     String nome, pais;
                     id = Integer.parseInt(FieldID.getText());
+                    if(!gerenciadorPortos.verificaExistenciaID(id)){
+                        id = Integer.parseInt(null);
+                    }
                     nome = FieldNome.getText();
                     pais = FieldPais.getText();
                     Porto porto = new Porto(id, nome, pais);
                     gerenciadorPortos.addPorto(porto);
-                    System.out.println(gerenciadorPortos.getPortos().getNome());
-                }catch (Exception ex){
-                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(PainelPorto, "Porto '"+porto.getNome()+"' cadastrado com sucesso", "Operação realizada", JOptionPane.INFORMATION_MESSAGE);
+                }catch (NumberFormatException ex){
+                    JOptionPane.showMessageDialog(PainelPorto, "Já existe um porto com este ID","ERRO", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
